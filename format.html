@@ -1,0 +1,38 @@
+<!--
+ * @Author: LYM
+ * @Date: 2022-08-01 10:49:21
+ * @LastEditors: LYM
+ * @LastEditTime: 2022-08-01 11:07:03
+ * @Description: Please set Description
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>数据源：</p>
+    <textarea
+      name="jsonParse"
+      cols="100"
+      rows="20"
+      id="jsonParse"
+    ></textarea>
+    <button onclick="handleFormat()">格式化</button>
+    <p>格式化后数据:</p>
+    <textarea name="json"  cols="100" rows="20" id="json"></textarea>
+    <script>
+      function handleFormat() {
+        try {
+          var val = document.getElementById('jsonParse').value
+          document.getElementById('json').value = JSON.parse(val)
+        } catch (error) {
+          throw error
+        }
+      }
+    </script>
+  </body>
+</html>
